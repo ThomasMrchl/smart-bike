@@ -1,6 +1,22 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Logopng from "../assets/logo-png.png";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
+
+// Animation for the "bike coming" text
+const bikeAnimation = keyframes`
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(10%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 0;
+    }
+`;
 
 const HeaderContainer = styled.header`
     display: flex;
@@ -8,8 +24,29 @@ const HeaderContainer = styled.header`
     align-items: center;
     justify-content: center;
     color: white;
+    background-color: #0A1015;
     padding-bottom: 15px;
     padding-top: 15px;
+    position: relative; /* To position the animated text */
+`;
+
+const LogoContainer = styled.div`
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const BikeComingText = styled.div`
+    position: absolute;
+    top: -10px; 
+    right: -10px;
+    font-size: 0.8rem;
+    color: #30A9FF; 
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    animation: ${bikeAnimation} 6s infinite; 
+    opacity: 0; 
 `;
 
 const Title = styled.div`
@@ -22,17 +59,16 @@ const Title = styled.div`
 `;
 
 const NavMenu = styled.div`
-    list-style: none;
     display: flex;
     gap: 2rem;
     margin: 0;
     padding: 0;
 `;
 
-const NavItem = styled.div`
-    cursor: pointer;
+const NavItem = styled(Link)`
+    text-decoration: none;
     font-size: 1.2rem;
-    color: white;
+    color: ${(props) => (props.active ? '#30B759' : 'white')};
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -43,27 +79,30 @@ const NavItem = styled.div`
 `;
 
 function Header() {
-    const [activeMenu, setActiveMenu] = useState('Home');
+    const location = useLocation();
 
     return (
         <HeaderContainer>
-            <Title>SmartBike</Title>
+            <LogoContainer>
+                <Title>SmartBike</Title>
+                <BikeComingText>New Bike Incoming...</BikeComingText>
+            </LogoContainer>
             <NavMenu>
                 <NavItem
-                    active={activeMenu === 'Home'}
-                    onClick={() => setActiveMenu('Home')}
+                    to="/"
+                    active={location.pathname === '/'}
                 >
                     Home
                 </NavItem>
                 <NavItem
-                    active={activeMenu === 'Bikes'}
-                    onClick={() => setActiveMenu('Bikes')}
+                    to="/bikes"
+                    active={location.pathname === '/bikes'}
                 >
                     Bikes
                 </NavItem>
                 <NavItem
-                    active={activeMenu === 'Contact'}
-                    onClick={() => setActiveMenu('Contact')}
+                    to="/contact"
+                    active={location.pathname === '/contact'}
                 >
                     Contact
                 </NavItem>
