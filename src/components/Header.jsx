@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 
-// Animation for the "bike coming" text
 const bikeAnimation = keyframes`
     0% {
         transform: translateX(-100%);
@@ -27,7 +26,7 @@ const HeaderContainer = styled.header`
     background-color: #0A1015;
     padding-bottom: 15px;
     padding-top: 15px;
-    position: relative; /* To position the animated text */
+    position: relative; 
 `;
 
 const LogoContainer = styled.div`
@@ -68,7 +67,7 @@ const NavMenu = styled.div`
 const NavItem = styled(Link)`
     text-decoration: none;
     font-size: 1.2rem;
-    color: ${(props) => (props.active ? '#30B759' : 'white')};
+    color: ${(props) => (props.active ? '#30B759' : "#e0ffe7")};
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     transition: color 0.3s ease;
