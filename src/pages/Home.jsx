@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import bike5 from "../assets/new-bike5.png";
 import { FaBolt, FaMapMarkedAlt, FaLock, FaMobileAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const gradientAnimation = keyframes`
     0% { background-position: 0% 0%; }
@@ -99,7 +100,7 @@ const Subtitle = styled.p`
     max-width: 420px;
 `;
 
-const ShopButton = styled.a`
+const ShopButton = styled(Link)`
     display: inline-block;
     padding: 0.95em 2.5em;
     font-size: 1.18rem;
@@ -262,7 +263,7 @@ function Home() {
                             <Subtitle>
                                 Experience the future of cycling: sleek design, advanced tech, and unmatched comfort. Ready for your next adventure.
                             </Subtitle>
-                            <ShopButton href="/shop">Shop Now</ShopButton>
+                            <ShopButton to="/shop">Shop Now</ShopButton>
                         </TextContent>
                     </ContentRow>
                 </HeroSection>
@@ -278,7 +279,7 @@ function Home() {
                     <HighlightText>
                         Discover <b>Bike5</b>: a revolution in urban mobility. Designed for performance, safety, and style, it’s the ultimate companion for city explorers and adventure seekers alike.
                     </HighlightText>
-                    <ShopButton href="/shop">Get Yours Now</ShopButton>
+                    <ShopButton to="/bikes">Get Yours Now</ShopButton>
                 </HighlightSection>
                 <FeaturesGrid>
                     <FeatureCard>

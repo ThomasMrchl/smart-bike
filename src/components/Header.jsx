@@ -84,7 +84,7 @@ function Header() {
         <HeaderContainer>
             <LogoContainer>
                 <Title>SmartBike</Title>
-                <BikeComingText>New Bike Incoming...</BikeComingText>
+                <BikeComingText>New Bike 5 UP !</BikeComingText>
             </LogoContainer>
             <NavMenu>
                 <NavItem
