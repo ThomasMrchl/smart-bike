@@ -7,6 +7,8 @@ import Header from "./components/Header";
 import Bikes from "./pages/Bikes";
 import BikeDetails from "./pages/BikeDetails";
 import ShopPage from "./pages/Shop";
+import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,7 +21,9 @@ root.render(
             <Route path="/bikes" element={<Bikes />} />
             <Route path="/bikes/:name" element={<BikeDetails />} />
             <Route path="/shop/:model" element={<ShopPage />} />
+            <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
     </Router>
   </React.StrictMode>
 );

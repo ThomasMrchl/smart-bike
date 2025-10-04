@@ -27,6 +27,7 @@ const HeaderContainer = styled.header`
     padding-bottom: 15px;
     padding-top: 15px;
     position: relative; 
+    border-bottom: 1px solid rgba(48, 169, 255, 0.1);
 `;
 
 const LogoContainer = styled.div`
