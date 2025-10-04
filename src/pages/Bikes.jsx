@@ -237,11 +237,10 @@ function Bikes() {
                                 content = (
                                     <ActionsWrapper>
                                         <ActionButton href={`/bikes/${bike.name.toLowerCase()}`}>See Details</ActionButton>
-                                        <ActionButton href={`/shop?model=${bike.name}`} primary>Purchase</ActionButton>
+                                        <ActionButton href={`/shop/${bike.name}`} primary>Purchase</ActionButton>
                                     </ActionsWrapper>
                                 );
                             }
-                            // Use PriceCell for price row
                             if (feature.key === "price") {
                                 return (
                                     <PriceCell key={bike.name + feature.key} highlight={bike.highlight}>

@@ -61,7 +61,7 @@ const BikeImage = styled.img`
     min-width: 260px;
     margin-right: 3.5rem;
     margin-bottom: 0;
-    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 8px 32px rgba(48,169,255,0.13));
     border-radius: 0;
     background: none;
     @media (max-width: 900px) {
@@ -263,7 +263,7 @@ function Home() {
                             <Subtitle>
                                 Experience the future of cycling: sleek design, advanced tech, and unmatched comfort. Ready for your next adventure.
                             </Subtitle>
-                            <ShopButton to="/shop">Shop Now</ShopButton>
+                            <ShopButton to="/bikes/bike5">Shop Now</ShopButton>
                         </TextContent>
                     </ContentRow>
                 </HeroSection>
